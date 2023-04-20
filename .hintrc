@@ -1,0 +1,37 @@
+{
+  "extends": [
+    "web-recommended"
+  ],
+  "ignoredUrls": [
+    {
+      "domain": "cdn\\.jsdelivr\\.net/.*",
+      "hints": [
+        "*"
+      ]
+    },
+    {
+      "domain": "cdn\\.jsdelivr\\.css/.*",
+      "hints": [
+        "*"
+      ]
+    },
+    {
+      "domain": "fonts\\.googleapis\\.com/.*",
+      "hints": [
+        "*"
+      ]
+    },
+    {
+      "domain": "fonts\\.gstatic\\.com/.*",
+      "hints": [
+        "*"
+      ]
+    }
+  ],
+  "hints": {
+    "html-checker": "off",
+    "detect-css-reflows/composite": "off",
+    "detect-css-reflows/layout": "off",
+    "detect-css-reflows/paint": "off"
+  }
+}

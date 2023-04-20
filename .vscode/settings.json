@@ -1,0 +1,31 @@
+{
+  "cSpell.words": [
+    "backbar",
+    "energie",
+    "gstatic",
+    "ingr",
+    "jsdelivr",
+    "lignegrise",
+    "logomark",
+    "margel",
+    "nomproduit",
+    "nutriscore",
+    "Nutriscore",
+    "prot",
+    "Recupere",
+    "scanbar",
+    "searchbar",
+    "souscat",
+    "tablename",
+    "usetext"
+  ],
+  "indentRainbow.tabmixColor": "rgba(128,32,96,1.5)",
+  "indentRainbow.indicatorStyle": "classic",
+  "indentRainbow.colors": [
+
+    "rgba(255,255,64,0.2)",
+    "rgba(127,255,127,0.2)",
+    "rgba(255,127,255,0.2)",
+    "rgba(79,236,236,0.2)"
+  ]
+}
