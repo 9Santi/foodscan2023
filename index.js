@@ -74,34 +74,41 @@ function showData(p) {
 
   document.querySelector("#ingr").textContent = p.ingredients_text;
 
-  let nutriscore = p.nutriscore_grade 
-  
-  function showNutri () {
-    if (nutriscore == "A") {
-        document.querySelector("#nutriscore").setAttribute('src', "nutriscoreA.svg")
-    } else if nutriscore == "B" {
-        document.querySelector("#nutriscore").setAttribute('src', "nutriscoreB.svg")
-    } else if nutriscore == "C" {
-        document.querySelector("#nutriscore").setAttribute('src', "nutriscoreC.svg")
-    } else if nutriscore == "D" {
-        document.querySelector("#nutriscore").setAttribute('src', "nutriscoreD.svg")
-    } else {
-        document.querySelector("#nutriscore").setAttribute('src', "nutriscoreE.svg")
-    }
-  };
-  
-  document.querySelector("#nutriscore") = p.nutriscore_grade;
+  let nutriscore = p.nutriscore_grade;
 
-  document.querySelector("#img_prod").setAttribute('src', p.image_front_url);
+  if (nutriscore === "A" || nutriscore === "a") {
+    document
+      .querySelector("#nutriscore")
+      .setAttribute("src", "img/nutriscoreA.svg");
+  } else if (nutriscore === "B" || nutriscore === "b") {
+    document
+      .querySelector("#nutriscore")
+      .setAttribute("src", "img/nutriscoreB.svg");
+  } else if (nutriscore === "C" || nutriscore === "c") {
+    document
+      .querySelector("#nutriscore")
+      .setAttribute("src", "img/nutriscoreC.svg");
+  } else if (nutriscore === "D" || nutriscore === "d") {
+    document
+      .querySelector("#nutriscore")
+      .setAttribute("src", "img/nutriscoreD.svg");
+  } else if (nutriscore === "E" || nutriscore === "e") {
+    document
+      .querySelector("#nutriscore")
+      .setAttribute("src", "img/nutriscoreE.svg");
+  } else {
+    document.querySelector("#nutriscore").textContent = "Non défini";
+  }
 
-  
+  let imageproduit = p.image_front_url;
+  document.querySelector("#img_prod").setAttribute("src", (url = imageproduit));
 }
 
 // Recupere la valeur de l'email
-function submitForm(event) {
-  event.preventDefault();
-  const emailValue = document.getElementById("email").value;
-  const messageValue = document.getElementById("message").value;
-  console.log(emailValue);
-  console.log(messageValue);
-}
+// function submitForm(event) {
+//   event.preventDefault();
+//   const emailValue = document.getElementById("email").value;
+//   const messageValue = document.getElementById("message").value;
+//   console.log(emailValue);
+//   console.log(messageValue);
+// }

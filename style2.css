@@ -1,55 +1,59 @@
 /* logo */
 .logomark {
-    font-weight: bold;
-    text-decoration: underline wavy;
+  font-weight: bold;
 }
 /* liens */
-a{
-    color: black;
-    font-size: 20px;
+a {
+  color: black;
+  font-size: 20px;
 }
-header a{
-    text-decoration: none;
+header a {
+  text-decoration: none;
 }
 
-a:hover{
-    text-decoration: underline wavy;
+a:hover {
+  text-decoration: underline wavy;
 }
 
 .btn {
-    border: solid 2px black;
-    background-color: black;
-    color: white;
+  border: solid 2px black;
+  background-color: black;
+  color: white;
 }
 .btn:hover {
-    border: solid 2px black;
+  border: solid 2px black;
 }
 /* tableau nutritionnelle */
-.tablename{
-    font-weight: bold;
+.tablename {
+  font-weight: bold;
 }
 
-th{
-    font-weight: 400;
+th {
+  font-weight: 400;
 }
 
-td{
-    font-weight: bold;
+td {
+  font-weight: bold;
 }
 /* image produit */
 .produit img {
-    height: 450px;
+  height: 450px;
 }
 /* ingrédients */
 
 fs-6 {
-    font-weight: bold;
+  font-weight: bold;
 }
 
 nav {
-    height: 80px;
+  height: 80px;
 }
 
 .r {
-    margin-top: 100px;
+  margin-top: 100px;
+}
+
+#nutriscore {
+  width: 120px;
+  height: 65px;
 }

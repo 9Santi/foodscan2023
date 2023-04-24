@@ -1,44 +1,68 @@
 <!DOCTYPE html>
 <html lang="fr">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="Découvrez ce que contiennent vraiment vos aliments grâce à notre service de scan de produits alimentaires. Scannez simplement le code-barres de votre produit pour obtenir toutes les informations nutritionnelles et les ingrédients qu'il contient. Faites des choix alimentaires plus éclairés et optez pour une alimentation plus saine grâce à notre outil pratique et facile d'utilisation. Essayez dès maintenant notre service de scan de produits alimentaires et mangez en toute confiance !">
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-KK94CHFLLe+nY2dmCWGMq91rCGa5gtU4mk92HdvYe+M/SXH301p5ILy+dN9+nJOZ" crossorigin="anonymous">
-    <link rel="stylesheet" href="style.css">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta
+      name="description"
+      content="Découvrez ce que contiennent vraiment vos aliments grâce à notre service de scan de produits alimentaires. Scannez simplement le code-barres de votre produit pour obtenir toutes les informations nutritionnelles et les ingrédients qu'il contient. Faites des choix alimentaires plus éclairés et optez pour une alimentation plus saine grâce à notre outil pratique et facile d'utilisation. Essayez dès maintenant notre service de scan de produits alimentaires et mangez en toute confiance !"
+    />
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-KK94CHFLLe+nY2dmCWGMq91rCGa5gtU4mk92HdvYe+M/SXH301p5ILy+dN9+nJOZ"
+      crossorigin="anonymous"
+    />
+    <link rel="stylesheet" href="style.css" />
     <title>FoodScan - Home</title>
-</head>
-<body>
+  </head>
+  <body>
     <!-- navbar -->
     <header>
-        <nav class="nav justify-content-between px-5 shadow align-items-center">
-            <a class="logomark" href="index.html">FoodScan</a>
-            <a  href="apropos.html">A propos</a>
-          </nav>
+      <nav class="nav justify-content-between px-5 shadow align-items-center">
+        <a class="logomark" href="index.html">FoodScan</a>
+        <a href="apropos.html">A propos</a>
+      </nav>
     </header>
-    <main class="container-fluid ">
-        <div class="row">
-            <!-- left side -->
-            <div class="col-lg-6 col-10 margel">
-                <div class="fs-1"><strong>Commencez maintenant!</strong> <br>
-                    Entrez le code-barre de votre produit. </div>
-                <div class="fs-5">
-                    Retrouvez toutes les informations essentielles sur les produits alimentaires pour vous guidez à faire votre choix santé!
-                </div>
-                <!-- Barre de recherche -->
-                <form class="input-group mb-4" role="search" action="/produit.html">
-                    <input  type="text" id="searchInput" class="form-control" placeholder="Numéro de code-barre" aria-label="Barre de recherche" aria-describedby="button-addon2">
-                    <button class="btn" type="submit"  id="button-addon2">Rechercher</button>
-                </form>
-            </div>
+    <main class="container-fluid">
+      <div class="row">
+        <!-- left side -->
+        <div class="col-lg-6 col-10 margel">
+          <div class="fs-1">
+            <strong>Commencez maintenant!</strong> <br />
+            Entrez le code-barre de votre produit.
+          </div>
+          <div class="fs-5">
+            Retrouvez toutes les informations essentielles sur les produits
+            alimentaires pour vous guidez à faire votre choix santé!
+          </div>
+          <!-- Barre de recherche -->
+          <form class="input-group mb-4" role="search" action="/produit.html">
+            <input
+              type="text"
+              id="searchInput"
+              class="form-control"
+              placeholder="Numéro de code-barre"
+              aria-label="Barre de recherche"
+              aria-describedby="button-addon2"
+            />
+            <button class="btn" type="submit" id="button-addon2">
+              Rechercher
+            </button>
+          </form>
         </div>
-
+      </div>
     </main>
     <footer class="text-center text-bg-light p-3 opacity-75 fixed-bottom">
-        <div class="col-lg-12">
-            <a href="avis.html">Donnez-nous votre avis.</a>
-        </div>
+      <div class="col-lg-12">
+        <a href="avis.html">Donnez-nous votre avis.</a>
+      </div>
     </footer>
-</body>
-<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ENjdO4Dr2bkBIFxQpeoTz1HIcje39Wm4jDKdf19U8gI4ddQ3GYNS7NTKfAdVQSZe" crossorigin="anonymous"></script>
+  </body>
+  <script
+    src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/js/bootstrap.bundle.min.js"
+    integrity="sha384-ENjdO4Dr2bkBIFxQpeoTz1HIcje39Wm4jDKdf19U8gI4ddQ3GYNS7NTKfAdVQSZe"
+    crossorigin="anonymous"
+  ></script>
+  <script src="index.js"></script>
 </html>
