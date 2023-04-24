@@ -1,41 +1,10 @@
-// Gere les quantités
-document.querySelector("#energie>td.quantité").textContent = "1";
-document.querySelector("#fat>td.quantité").textContent = "2";
-document.querySelector("#gras>td.quantité").textContent = "3";
-document.querySelector("#glucides>td.quantité").textContent = "4";
-document.querySelector("#sugar>td.quantité").textContent = "5";
-document.querySelector("#prot>td.quantité").textContent = "6";
-document.querySelector("#sel>td.quantité").textContent = "7";
-
-// Gere les unités
-document.querySelector("#energie>td.unité").textContent = "kj/kcal";
-document.querySelector("#fat>td.unité").textContent = "g";
-document.querySelector("#gras>td.unité").textContent = "g";
-document.querySelector("#glucides>td.unité").textContent = "g";
-document.querySelector("#sugar>td.unité").textContent = "g";
-document.querySelector("#prot>td.unité").textContent = "g";
-document.querySelector("#sel>td.unité").textContent = "g";
-
-// Gere le nutriscore
-document.querySelector("#nutriscore");
-
-// Gere la photo du produit
-document.querySelector("#img_prod");
-
-// Gere les ingrédients
-document.querySelector("#ingr").textContent = "Description des ingrédients";
-
-// Gere le nom du produit
-document.querySelector("#nomproduit").textContent = "Nom du produit";
-
 // Recupere la valeur de recherche
 document.querySelector("form[role=search]").addEventListener("submit", search);
 
+// Lance la recherche API
 function search(event) {
   event.preventDefault();
-  const searchValue = (document.getElementById(
-    "searchInput"
-  ).value = 737628064502);
+  const searchValue = document.getElementById("searchInput").value;
   const apiUrl = `https://world.openfoodfacts.org/api/v0/product/${searchValue}.json?fields=generic_name,nutriments,ingredients_text,image_front_url,nutriscore_grade`;
   console.log(apiUrl);
   fetch(apiUrl)
@@ -55,7 +24,7 @@ function search(event) {
 }
 // `https://api.example.com/search?q=${searchValue}
 
-// Ajoute la valeur sur html
+// Ajoute la valeur sur html du tableau nutritionnelle
 function showData(p) {
   const n = p.nutriments;
 
@@ -72,34 +41,47 @@ function showData(p) {
   document.querySelector("#prot>td.quantité").textContent = n.proteins_100g;
   document.querySelector("#sel>td.quantité").textContent = n.salt_100g;
 
-  document.querySelector("#ingr").textContent = p.ingredients_text;
-
-  let nutriscore = p.nutriscore_grade;
-
-  if (nutriscore === "A" || nutriscore === "a") {
-    document
-      .querySelector("#nutriscore")
-      .setAttribute("src", "img/nutriscoreA.svg");
-  } else if (nutriscore === "B" || nutriscore === "b") {
-    document
-      .querySelector("#nutriscore")
-      .setAttribute("src", "img/nutriscoreB.svg");
-  } else if (nutriscore === "C" || nutriscore === "c") {
-    document
-      .querySelector("#nutriscore")
-      .setAttribute("src", "img/nutriscoreC.svg");
-  } else if (nutriscore === "D" || nutriscore === "d") {
-    document
-      .querySelector("#nutriscore")
-      .setAttribute("src", "img/nutriscoreD.svg");
-  } else if (nutriscore === "E" || nutriscore === "e") {
-    document
-      .querySelector("#nutriscore")
-      .setAttribute("src", "img/nutriscoreE.svg");
+  // Gere la liste ingrédients
+  let ingredientsText = p.ingredients_text;
+  if (ingredientsText) {
+    document.querySelector("#ingr").textContent = ingredientsText;
   } else {
-    document.querySelector("#nutriscore").textContent = "Non défini";
+    document.querySelector("#ingr").textContent = "Ingrédients non définis";
   }
 
+  // Const de valeur de background nutriscore du produit
+  const nutriscores = {
+    a: "rgba(2, 129, 62, 1)",
+    b: "rgba(134, 188, 38, 1)",
+    c: "rgba(255, 202, 0, 1)",
+    d: "rgba(239, 125, 0, 1)",
+    e: "rgba(229, 50, 18, 1)",
+  };
+
+  // Gere le nutriscore et son background produit
+  let nutriscore = p.nutriscore_grade;
+  let nutriscoreColor = nutriscores[nutriscore];
+
+  switch (nutriscore) {
+    case "a":
+    case "b":
+    case "c":
+    case "d":
+    case "e":
+      document
+        .querySelector("#nutriscore")
+        .setAttribute("src", `img/nutriscore${nutriscore}.svg`);
+      document.querySelector(".produit").style.backgroundColor =
+        nutriscoreColor;
+      break;
+    default:
+      document
+        .querySelector("#nutriscore")
+        .setAttribute("src", "img/nutriscore-unknown.svg");
+      document.querySelector(".produit").style.backgroundColor = "grey";
+  }
+
+  // Gere la photo du produit
   let imageproduit = p.image_front_url;
   document.querySelector("#img_prod").setAttribute("src", (url = imageproduit));
 }

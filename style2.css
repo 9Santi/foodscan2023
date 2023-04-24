@@ -2,7 +2,13 @@
 .logomark {
   font-weight: bold;
 }
-/* liens */
+
+/* navbar */
+
+nav {
+  height: 80px;
+}
+
 a {
   color: black;
   font-size: 20px;
@@ -14,6 +20,8 @@ header a {
 a:hover {
   text-decoration: underline wavy;
 }
+
+/* buttons*/
 
 .btn {
   border: solid 2px black;
@@ -35,18 +43,24 @@ th {
 td {
   font-weight: bold;
 }
+
+#nomproduit {
+  font-weight: bold;
+}
 /* image produit */
 .produit img {
   height: 450px;
+  margin: 10px 0px;
 }
-/* ingrédients */
+
+.produit {
+  background-color: aquamarine;
+}
+
+/* ingrédients et nutriscore */
 
 fs-6 {
   font-weight: bold;
-}
-
-nav {
-  height: 80px;
 }
 
 .r {
