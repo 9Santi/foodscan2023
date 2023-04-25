@@ -3,7 +3,7 @@ document.addEventListener("DOMContentLoaded", search);
 
 // Lance la recherche API
 
-function search(event) {
+function search() {
   // event.preventDefault();
   // const searchValue = document.getElementById("searchInput").value;
   const searchValue = new URLSearchParams(document.location.search).get("q");
@@ -45,7 +45,7 @@ function showData(p) {
   document.querySelector("#sel>td.quantité").textContent = n.salt_100g;
 
   // Gere les allergènes
-  let allergenesText = p.allergens_from_ingredients;
+  let allergenesText = p.allergens_from_ingredients.replaceAll("en:", "");
   if (allergenesText) {
     document.querySelector("#allergenes").textContent = allergenesText;
   } else {
@@ -55,7 +55,7 @@ function showData(p) {
 
   // Gere les additifs
   const a = p.additives_original_tags;
-  let additifText = a[0];
+  let additifText = a[0].replaceAll("en:", "");
   if (additifText) {
     document.querySelector("#additif").textContent = additifText;
   } else {
