@@ -37,6 +37,7 @@
               placeholder="Numéro de code-barre"
               aria-label="Barre de recherche"
               aria-describedby="button-addon2"
+              name="q"
             />
             <button class="btn" type="submit" id="button-addon3">
               Rechercher
@@ -103,6 +104,10 @@
           <div class="row">
             <div class="col-lg-6 text-center">
               <img id="nutriscore" src="img/nutriscoreA.svg" alt="nutriscore" />
+              <div class="fs-6 fw-bold">Allergènes</div>
+              <p id="allergenes" class="fw-bold">Allergènes</p>
+              <div class="fs-6 fw-bold">Additifs</div>
+              <p id="additif" class="fw-bold">Additifs</p>
             </div>
             <div class="col-lg-6">
               <div class="fs-6 fw-bold">Ingrédients</div>
@@ -120,6 +125,6 @@
       integrity="sha384-ENjdO4Dr2bkBIFxQpeoTz1HIcje39Wm4jDKdf19U8gI4ddQ3GYNS7NTKfAdVQSZe"
       crossorigin="anonymous"
     ></script>
-    <script src="index.js"></script>
+    <script defer src="index.js"></script>
   </body>
 </html>

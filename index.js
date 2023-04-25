@@ -1,11 +1,14 @@
 // Recupere la valeur de recherche
-document.querySelector("form[role=search]").addEventListener("submit", search);
+document.addEventListener("DOMContentLoaded", search);
 
 // Lance la recherche API
+
 function search(event) {
-  event.preventDefault();
-  const searchValue = document.getElementById("searchInput").value;
-  const apiUrl = `https://world.openfoodfacts.org/api/v0/product/${searchValue}.json?fields=generic_name,nutriments,ingredients_text,image_front_url,nutriscore_grade`;
+  // event.preventDefault();
+  // const searchValue = document.getElementById("searchInput").value;
+  const searchValue = new URLSearchParams(document.location.search).get("q");
+
+  const apiUrl = `https://world.openfoodfacts.org/api/v0/product/${searchValue}.json?fields=product_name,nutriments,ingredients_text,image_front_url,nutriscore_grade,allergens_from_ingredients,additives_original_tags`;
   console.log(apiUrl);
   fetch(apiUrl)
     .then((response) => {
@@ -28,7 +31,7 @@ function search(event) {
 function showData(p) {
   const n = p.nutriments;
 
-  document.querySelector("#nomproduit").textContent = p.generic_name;
+  document.querySelector("#nomproduit").textContent = p.product_name;
 
   document.querySelector("#energie>td.quantité").textContent =
     n["energy-kcal_100g"];
@@ -40,6 +43,24 @@ function showData(p) {
   document.querySelector("#sugar>td.quantité").textContent = n.sugars_100g;
   document.querySelector("#prot>td.quantité").textContent = n.proteins_100g;
   document.querySelector("#sel>td.quantité").textContent = n.salt_100g;
+
+  // Gere les allergènes
+  let allergenesText = p.allergens_from_ingredients;
+  if (allergenesText) {
+    document.querySelector("#allergenes").textContent = allergenesText;
+  } else {
+    document.querySelector("#allergenes").textContent =
+      "Allergènes non définis";
+  }
+
+  // Gere les additifs
+  const a = p.additives_original_tags;
+  let additifText = a[0];
+  if (additifText) {
+    document.querySelector("#additif").textContent = additifText;
+  } else {
+    document.querySelector("#additif").textContent = "Additifs non définis";
+  }
 
   // Gere la liste ingrédients
   let ingredientsText = p.ingredients_text;
