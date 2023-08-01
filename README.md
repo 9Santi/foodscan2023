@@ -13,6 +13,7 @@ Le but de ce projet est de réaliser un site utilisant une API "Open Food Fact" 
 ## Langage utilisés
 
 -Framework Bootstrap.
+-Javascript Natif.
 
 - API [OpenFoodFact](https://fr.openfoodfacts.org/daodFactta).
 "# opc" 
